@@ -67,11 +67,6 @@ class ApiRos:
         """
 
         # request login
-        # Mikrotik answers with a challenge in the 'ret' attribute
-        # 'ret' attribute accessible as attrs['ret']
-        _, attrs = self.talk(["/login"])[0]
-
-        # send response & login request
         self.talk(["/login",
                    "=name=%s" % username,
                    "=password=%s" % password])
